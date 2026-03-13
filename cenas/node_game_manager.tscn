@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci8kc00iij3ve"]
+
+[ext_resource type="Script" uid="uid://hyqr1av6233a" path="res://scripts/game_manager_script.gd" id="1_tvk3t"]
+[ext_resource type="PackedScene" uid="uid://c6d4lrgmt5t7n" path="res://cenas/control_hud.tscn" id="2_0s7i6"]
+
+[node name="NodeGameManager" type="Node"]
+script = ExtResource("1_tvk3t")
+
+[node name="ControlHud" parent="." instance=ExtResource("2_0s7i6")]
