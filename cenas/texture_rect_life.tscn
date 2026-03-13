@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvnvo7c1ksp7h"]
-
-[ext_resource type="Texture2D" uid="uid://c2jmt3r6pm41h" path="res://placeholder/heart pixel art 254x254.png" id="1_hhuow"]
-
-[node name="TextureRectLife" type="TextureRect"]
-custom_minimum_size = Vector2(100, 100)
-texture = ExtResource("1_hhuow")
-expand_mode = 3
-stretch_mode = 5
