@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://4nqkql4vjrmr"]
+
+[ext_resource type="PackedScene" uid="uid://cqtmc1ddk5bfq" path="res://cenas/plataforma_vertical.tscn" id="1_yqrkw"]
+[ext_resource type="Script" uid="uid://cglaahgciywjk" path="res://scripts/plataforma_move.gd" id="2_77uq2"]
+
+[sub_resource type="Curve3D" id="Curve3D_77uq2"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="Parente Plataforma" type="Node3D"]
+
+[node name="PlataformaVertical" parent="." node_paths=PackedStringArray("pathFollow", "timer") instance=ExtResource("1_yqrkw")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, -2.11758e-22, -8.35187e-23, 2.11758e-22, 1, 0, 0, 0)
+script = ExtResource("2_77uq2")
+pathFollow = NodePath("../Path3D/PathFollow3D")
+timer = NodePath("../Timer")
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_77uq2")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-4.37112e-08, 0.999997, -4.37113e-08, 0, -4.37113e-08, -0.999997, -0.999996, -4.37113e-08, 1.91068e-15, 0, 0, 0)
+loop = false
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+one_shot = true
+autostart = true

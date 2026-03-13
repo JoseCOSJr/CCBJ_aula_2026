@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6d4lrgmt5t7n"]
+
+[ext_resource type="PackedScene" uid="uid://bvnvo7c1ksp7h" path="res://cenas/texture_rect_life.tscn" id="1_h3ng3"]
+[ext_resource type="Script" uid="uid://cyc70x1xb5iwx" path="res://scripts/control_hud.gd" id="1_ihubj"]
+
+[node name="ControlHud" type="Control" node_paths=PackedStringArray("textScore", "hpNodesArray") groups=["Hud"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ihubj")
+textScore = NodePath("RichTextLabel")
+hpNodesArray = [NodePath("HBoxContainer/TextureRectLife"), NodePath("HBoxContainer/TextureRectLife2"), NodePath("HBoxContainer/TextureRectLife3")]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 396.0
+offset_bottom = 132.0
+theme_override_constants/separation = 32
+
+[node name="TextureRectLife" parent="HBoxContainer" instance=ExtResource("1_h3ng3")]
+layout_mode = 2
+
+[node name="TextureRectLife2" parent="HBoxContainer" instance=ExtResource("1_h3ng3")]
+layout_mode = 2
+
+[node name="TextureRectLife3" parent="HBoxContainer" instance=ExtResource("1_h3ng3")]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -200.0
+offset_bottom = 100.0
+grow_horizontal = 0
+theme_override_font_sizes/normal_font_size = 32
+text = "Pontos: 0"
+horizontal_alignment = 1
+vertical_alignment = 1

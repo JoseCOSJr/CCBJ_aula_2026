@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://i5w862hctvfr"]
+
+[ext_resource type="Script" uid="uid://cq1k13qsnaj2i" path="res://scripts/area_3d_hurtbox.gd" id="1_g1gtg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_13557"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fd6x2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1mohr"]
+
+[node name="Caixa" type="RigidBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_13557")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_fd6x2")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 12
+script = ExtResource("1_g1gtg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_1mohr")
