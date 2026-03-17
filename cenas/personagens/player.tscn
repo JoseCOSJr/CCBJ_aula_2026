@@ -637,7 +637,7 @@ bone_idx = 1
 [node name="AnimationPlayer" parent="NodeTurn/AZOBE-B1_ANIM020" index="3"]
 autoplay = "IDLE"
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="X" type="AudioStreamPlayer3D" parent="."]
 bus = &"SFX"
 
 [node name="NodeVibration" type="Node3D" parent="."]
